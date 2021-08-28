@@ -1,0 +1,47 @@
+{
+  "name": "kodie/img-items",
+  "description": "Finds individual items inside an image and gets their size/coordinates.",
+  "keywords": [
+    "detect",
+    "extract",
+    "image",
+    "img",
+    "item",
+    "jimp",
+    "screenshot"
+  ],
+  "authors": [
+    {
+      "name": "Kodie Grantham",
+      "email": "kodie.grantham@gmail.com",
+      "homepage": "https://kodieg.com"
+    }
+  ],
+  "homepage": "https://github.com/kodie/php-img-items",
+  "license": "MIT",
+  "archive": {
+    "exclude": [
+      "!img-items.php"
+    ]
+  },
+  "autoload": {
+    "files": [
+      "img-items.php"
+    ]
+  },
+  "repositories": [
+    {
+      "type": "git",
+      "url": "git@github.com:kodie/color.git"
+    }
+  ],
+  "require": {
+    "php": "^7.3|^8.0",
+    "ext-gd": "*",
+    "league/color-extractor": "0.3.*",
+    "spatie/color": "dev-add_color_distance"
+  },
+  "scripts": {
+    "test": "php test.php"
+  }
+}
