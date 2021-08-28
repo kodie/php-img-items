@@ -4,10 +4,11 @@
   "keywords": [
     "detect",
     "extract",
+    "gd",
+    "gdimage",
     "image",
     "img",
     "item",
-    "jimp",
     "screenshot"
   ],
   "authors": [
