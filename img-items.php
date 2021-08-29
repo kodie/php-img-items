@@ -119,7 +119,7 @@ function img_items($image, $options = array()) {
         $l = $x - $left_gap - 1;
         $t = $y - $top_gap - 1;
 
-        $found_items = array_values(array_filter(array_keys($items), function($k) use($items, $opts, $x, $y, $l, $t) {
+        $found_items = array_values(array_filter(array_keys($items), function($k) use($items, $opts, $left_gap, $top_gap, $x, $y, $l, $t) {
           $i = $items[$k];
 
           return (
