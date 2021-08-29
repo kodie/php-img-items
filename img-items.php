@@ -6,6 +6,31 @@ use Spatie\Color\Factory;
 use Spatie\Color\Rgb;
 
 function img_items($image, $options = array()) {
+  function get_average_luminance($image, $samples = 30) {
+    $width = imagesx($image);
+    $height = imagesy($image);
+    $x_step = intval($width / $samples);
+    $y_step = intval($height / $samples);
+    $total_luminance = 0;
+    $sample_count = 1;
+
+    for ($y = 0; $y < $height; $y += $y_step) {
+      for ($x = 0; $x < $width; $x += $x_step) {
+        $rgb = imagecolorat($image, $x, $y);
+        $r = ($rgb >> 16) & 0xFF;
+        $g = ($rgb >> 8) & 0xFF;
+        $b = $rgb & 0xFF;
+        $luminance = ($r + $r + $b + $g + $g + $g) / 6;
+        $total_luminance += $luminance;
+        $sample_count++;
+      }
+    }
+
+    $average_luminance = $total_luminance / $sample_count;
+
+    return ($average_luminance / 255) * 100;
+  }
+
   function get_pixel_color($image, $x, $y) {
     $rgb_data = imagecolorat($image, $x, $y);
     $r = ($rgb_data >> 16) & 0xFF;
@@ -57,7 +82,13 @@ function img_items($image, $options = array()) {
   if ($opts['height_threshold'] === null) $opts['height_threshold'] = $opts['size_threshold'];
   if ($opts['width_threshold'] === null) $opts['width_threshold'] = $opts['size_threshold'];
 
-  if ($opts['background'] === 0) {
+  if ($opts['background'] === -1) {
+    if (get_average_luminance($img) >= 50) {
+      $opts['background'] = new Rgb(255, 255, 255);
+    } else {
+      $opts['background'] = new Rgb(0, 0, 0);
+    }
+  } elseif ($opts['background'] === 0) {
     $opts['background'] = array(get_pixel_color($img, 0, 0));
   } elseif (is_int($opts['background']) && $opts['background'] >= 1 && $opts['background'] <= 10) {
     $palette = Palette::fromGD($img)->getMostUsedColors($opts['background']);
