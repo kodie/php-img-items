@@ -20,7 +20,7 @@ function img_items($image, $options = array()) {
         $r = ($rgb >> 16) & 0xFF;
         $g = ($rgb >> 8) & 0xFF;
         $b = $rgb & 0xFF;
-        $luminance = ($r + $r + $b + $g + $g + $g) / 6;
+        $luminance = ($r + $r + $g + $g + $b + $b) / 6;
         $total_luminance += $luminance;
         $sample_count++;
       }
