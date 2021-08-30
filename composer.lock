@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "dd5b6a6a48f29e2b4e0523e9cfdac2b4",
+    "content-hash": "66822e3b98ff55b70026f24dc6ef3e8a",
     "packages": [
         {
             "name": "league/color-extractor",
@@ -58,6 +58,10 @@
                 "image",
                 "palette"
             ],
+            "support": {
+                "issues": "https://github.com/thephpleague/color-extractor/issues",
+                "source": "https://github.com/thephpleague/color-extractor/tree/master"
+            },
             "time": "2016-12-15T09:30:02+00:00"
         },
         {
@@ -65,8 +69,8 @@
             "version": "dev-add_color_distance",
             "source": {
                 "type": "git",
-                "url": "git@github.com:kodie/color.git",
-                "reference": "98a46e623c9274ff837c97b344aed43fb30a3e54"
+                "url": "https://github.com/kodie/color.git",
+                "reference": "f97aac6cf620b060d7d2ee8c55e62c84b7d82413"
             },
             "require": {
                 "php": "^7.3|^8.0"
@@ -109,7 +113,7 @@
                 "rgb",
                 "spatie"
             ],
-            "time": "2021-08-27T18:01:02+00:00"
+            "time": "2021-08-30T16:25:50+00:00"
         }
     ],
     "packages-dev": [],
@@ -125,5 +129,5 @@
         "ext-gd": "*"
     },
     "platform-dev": [],
-    "plugin-api-version": "1.1.0"
+    "plugin-api-version": "2.0.0"
 }
