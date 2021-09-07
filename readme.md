@@ -1,5 +1,9 @@
 # img-items
 
+[![packagist package version](https://img.shields.io/packagist/v/kodie/img-items.svg?style=flat-square)](https://packagist.org/packages/kodie/img-items)
+[![packagist package downloads](https://img.shields.io/packagist/dt/kodie/img-items.svg?style=flat-square)](https://packagist.org/packages/kodie/img-items)
+[![license](https://img.shields.io/github/license/kodie/php-img-items.svg?style=flat-square)](license.md)
+
 Finds individual items inside an image and gets their size/coordinates. A PHP port of the [img-items](https://github.com/kodie/img-items) Node module.
 
 ## Example
