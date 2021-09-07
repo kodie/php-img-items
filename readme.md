@@ -121,7 +121,10 @@ Array
 )
 ```
 
-## License
-MIT. See the [license.md file](license.md) for more info.
+## Related
 
-[Jimp]: https://www.npmjs.com/package/jimp
+ - [img-items](https://github.com/kodie/img-items) - The Node module this module was based on.
+
+## License
+
+MIT. See the [license.md file](license.md) for more info.
